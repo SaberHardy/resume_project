@@ -46,8 +46,10 @@
         <img src="{% static 'img/hero-img.jpg' %}" alt="" data-aos="fade-in">
         <div class="container d-flex flex-column align-items-center justify-content-center text-center"
              data-aos="fade-up" data-aos-delay="100">
-            <h2>I am Saber Bounehas</h2>
-            <p>Software & Data Engineer</p>
+            {% for cont in all_properties%}
+            <h2>I am {{ cont.full_name }}</h2>
+            <p>{{ cont.profile_title }}</p>
+            {% endfor %}
         </div>
     </section>
 
@@ -61,11 +63,13 @@
                             <img src="{% static 'img/me2.JPG' %}" class="img-fluid" alt="">
                         </div>
                         <div class="col-12 about-info">
-                            <p><strong>Name: </strong> <span>Saber Bounehas</span></p>
-                            <p><strong>Profile: </strong> <span>Software & Data Engineer</span></p>
-                            <p><strong>Email: </strong> <span>PERSONALEMAIL@GMAIL.COM</span></p>
-                            <p><strong>LinkedIn: </strong> <span>PHONE NUMBER</span></p>
-                            <p><strong>YouTube: </strong> <span>YouTube link</span></p>
+                            {% for cont in all_properties %}
+                                <p><strong>Name: </strong> <span>{{ cont.full_name }}</span></p>
+                                <p><strong>Profile: </strong> <span>{{ cont.profile_title }}</span></p>
+                                <p><strong>Email: </strong> <span>{{ cont.email | title }}</span></p>
+                                <p><strong>LinkedIn: </strong> <span><a href="{{ cont.linkedin }}" target="_blank">LinkedIn Profile</a></span></p>
+                                <p><strong>YouTube: </strong> <span><a href="{{ cont.youtube }}" target="_blank">Youtube Channel</a></span></p>
+                            {% endfor %}
                         </div>
                     </div>
                     <br>
@@ -74,24 +78,10 @@
                 <div class="col-md-6">
                     <div class="about-me">
                         <h4>About me</h4>
-                        <p>I'm a passionate Python developer with extensive experience in both software development and
-                            software engineering, spanning over 7 years.
-                            <br><br>My journey in the tech world has been marked
-                            by a deep commitment to crafting efficient and innovative solutions using Python. As a
-                            software engineer, I've honed my skills in designing robust systems and ensuring seamless
-                            functionality.
-                            <br><br>My background as a software developer has equipped me with a strong
-                            foundation in coding and problem-solving, enabling me to tackle complex challenges with
-                            creativity and precision. With several years of mid-senior experience, I bring a wealth of
-                            knowledge and expertise to every project I undertake.
-
-                            In addition to my Python expertise, I have substantial experience working with cloud
-                            services such as Google Cloud Platform (GCP) and Amazon Web Services (AWS).
-                            <br><br>I've utilized a variety of services including AWS Lambda, EC2, S3, Pub/Sub, and
-                            GCP's
-                            Compute Engine, Cloud Functions, and BigQuery.
-                            This cloud experience allows me to build scalable, resilient, and cost-effective solutions
-                            tailored to meet the unique needs of each project.
+                        <p>
+                            {% for cont in all_properties %}
+                                {{ cont.about_me }}
+                            {% endfor %}
                         </p>
                     </div>
                 </div>
