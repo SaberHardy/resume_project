@@ -43,6 +43,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # add get_experience here
+                'resume_app.views.get_experience',
+                'resume_app.views.educations',
             ],
         },
     },
