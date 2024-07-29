@@ -67,15 +67,32 @@
                         </div>
                         <div class="col-12 about-info">
                             {% for cont in all_properties %}
-                            <p><strong>Name: </strong> <span>{{ cont.full_name }}</span></p>
-                            <p><strong>Profile: </strong> <span>{{ cont.profile_title }}</span></p>
-                            <p><strong>Email: </strong> <span>{{ cont.email | title }}</span></p>
-                            <p><strong>LinkedIn: </strong> <span><a href="{{ cont.linkedin }}" target="_blank">LinkedIn Profile</a></span>
+                            <p>
+                                <strong>Name: </strong>
+                                <span>{{ cont.full_name }}</span>
                             </p>
-                            <p><strong>YouTube: </strong> <span><a href="{{ cont.youtube }}" target="_blank">Youtube Channel</a></span>
+                            <p>
+                                <strong>Role: </strong>
+                                <span>{{ cont.profile_title }}</span>
                             </p>
-                            <p><strong>GitHub: </strong> <span><a href="{{ cont.github }}"
-                                                                  target="_blank">Git Projects</a></span></p>
+                            <!--                            <p><strong>Email: </strong> <span>{{ cont.email | title }}</span></p>-->
+                            <p>
+                                <strong>LinkedIn: </strong>
+                                <span>
+                                    <a href="{{ cont.linkedin }}" target="_blank">LinkedIn Profile</a>
+                                </span>
+                            </p>
+                            <p>
+                                <strong>YouTube: </strong>
+                                <span>
+                                    <a href="{{ cont.youtube }}" target="_blank">Youtube Channel</a>
+                                </span>
+                            </p>
+                            <p>
+                                <strong>GitHub: </strong>
+                                <span><a href="{{ cont.github }}" target="_blank">Git Projects</a>
+                                </span>
+                            </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -139,7 +156,7 @@
                         <p><em>{{ education.university }}</em></p>
                         <ul>
 
-                                <h5>{{ education.description|safe }}</h5>
+                            <h5>{{ education.description|safe }}</h5>
 
                         </ul>
                     </div><!-- Edn Resume Item -->
