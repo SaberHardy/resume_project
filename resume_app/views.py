@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import AboutMe, ExperienceModel, EducationModel
+from .models import AboutMe, ExperienceModel, EducationModel, CertificationModel
 
 
 def home(request):
@@ -17,9 +17,17 @@ def get_experience(request):
     return context
 
 
-def educations(request):
+def get_educations(request):
     # order_by('-start_date')
     all_educations = EducationModel.objects.all().order_by('-start_date')
 
     context = {'all_educations': all_educations}
+    return context
+
+
+def get_certifications(request):
+    # order_by('-start_date')
+    all_certifications = CertificationModel.objects.all()
+
+    context = {'all_certifications': all_certifications}
     return context

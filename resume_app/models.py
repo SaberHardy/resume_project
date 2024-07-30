@@ -37,3 +37,13 @@ class EducationModel(models.Model):
 
     def __str__(self):
         return self.university
+
+
+class CertificationModel(models.Model):
+    name = models.CharField(max_length=500)
+    icon = models.CharField(max_length=200)
+    description = RichTextField(blank=True, null=True)
+    url = models.URLField()
+
+    def __str__(self):
+        return self.name

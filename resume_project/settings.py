@@ -10,6 +10,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -17,7 +18,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resume_app',
-    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -45,7 +45,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # add get_experience here
                 'resume_app.views.get_experience',
-                'resume_app.views.educations',
+                'resume_app.views.get_educations',
+                'resume_app.views.get_certifications',
             ],
         },
     },
