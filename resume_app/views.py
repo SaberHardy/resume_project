@@ -1,6 +1,7 @@
-from django.shortcuts import render
-
 from .models import AboutMe, ExperienceModel, EducationModel, CertificationModel
+from django.shortcuts import render
+from django.conf import settings
+from github import Github
 
 
 def home(request):
@@ -30,4 +31,12 @@ def get_certifications(request):
     all_certifications = CertificationModel.objects.all()
 
     context = {'all_certifications': all_certifications}
+    return context
+
+
+def get_repo_count(request):
+    g = Github(settings.GITHUB_TOKEN)
+    user = g.get_user()
+    repo_count = user.get_repos().totalCount
+    context = {'repo_count': repo_count}
     return context

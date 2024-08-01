@@ -1,12 +1,13 @@
-import os
+from decouple import config
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-it90g&xnm#q3^c$&^24usqm4u3kw9&69sr@i^3(rl)cc(ykc)c'
+SECRET_KEY = config('SECRET_KEY')
+GITHUB_TOKEN = config('GITHUB_TOKEN')
 
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -47,6 +48,7 @@ TEMPLATES = [
                 'resume_app.views.get_experience',
                 'resume_app.views.get_educations',
                 'resume_app.views.get_certifications',
+                'resume_app.views.get_repo_count'
             ],
         },
     },
