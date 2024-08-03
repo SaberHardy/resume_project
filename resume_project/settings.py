@@ -8,8 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 GITHUB_TOKEN = config('GITHUB_TOKEN')
 
 DEBUG = True
-ALLOWED_HOSTS = ['saber.b.net', 'www.saber.b.net']
-
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'saber.b.net', 'www.saber.b.net']
 
 INSTALLED_APPS = [
     'ckeditor',
