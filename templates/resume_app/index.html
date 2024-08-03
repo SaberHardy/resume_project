@@ -559,7 +559,7 @@
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
+            {% comment %}
             <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-5">
 
@@ -595,6 +595,7 @@
 
                 </div>
             </div>
+            {% endcomment %}
 
             <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
                   data-aos-delay="300">
@@ -627,38 +628,38 @@
 
                         <button type="submit" disabled>Send Message</button>
                     </div>
-
                 </div>
-            </form><!-- End Contact Form -->
-
+            </form>
         </div>
-
-    </section><!-- /Contact Section -->
+    </section>
 </main>
 
 <footer id="footer" class="footer accent-background">
-
     <div class="container">
         <div class="copyright text-center ">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Saber B</strong>
+            <p>© <span>Copyright</span>
+                <strong class="px-1 sitename">Saber B</strong>
             </p>
         </div>
         <div class="social-links d-flex justify-content-center">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            {% for about in all_properties %}
+            <a href="{{about.facebook}}" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="{{about.linkedin}}" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="{{about.github}}" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="{{about.youtube}}" target="_blank"><i class="bi bi-youtube"></i></a>
+            {% endfor %}
         </div>
         <div class="credits">
-            <!--            Designed by <a href="">BootstrapMade</a>-->
         </div>
     </div>
-
 </footer>
 
 <!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+<a href="#"
+   id="scroll-top"
+   class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
 
 <!-- Preloader -->
 <div id="preloader"></div>
