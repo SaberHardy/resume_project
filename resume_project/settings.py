@@ -48,7 +48,8 @@ TEMPLATES = [
                 'resume_app.views.get_experience',
                 'resume_app.views.get_educations',
                 'resume_app.views.get_certifications',
-                'resume_app.views.get_repo_count'
+                'resume_app.views.get_repo_count',
+                'resume_app.views.get_projects',
             ],
         },
     },

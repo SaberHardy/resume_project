@@ -47,3 +47,13 @@ class CertificationModel(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProjectModel(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='static/img/')
+    description = RichTextField(blank=True, null=True)
+    url = models.URLField()
+
+    def __str__(self):
+        return self.name

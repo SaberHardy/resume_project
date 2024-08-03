@@ -1,4 +1,4 @@
-from .models import AboutMe, ExperienceModel, EducationModel, CertificationModel
+from .models import AboutMe, ExperienceModel, EducationModel, CertificationModel, ProjectModel
 from django.shortcuts import render
 from django.conf import settings
 from github import Github
@@ -39,4 +39,11 @@ def get_repo_count(request):
     user = g.get_user()
     repo_count = user.get_repos().totalCount
     context = {'repo_count': repo_count}
+    return context
+
+
+def get_projects(request):
+    all_projects = ProjectModel.objects.all()
+
+    context = {'all_projects': all_projects}
     return context
